@@ -1,0 +1,98 @@
+
+	SET(r1, start_test_message)
+	CALL(r12, print) //call print
+
+
+	SET(r7, 0)	 // which test are we on? Print this if there is an error in testing
+
+	//push  6, 5, 4 on to the stack
+	SET(r1, 6)
+	CALL(r12, PUSH)
+
+	SET(r1, 5)
+	CALL(r12, PUSH)
+
+	SET(r1, 4)
+	CALL(r12, PUSH)
+
+	//Now Stack should not be empty
+	INC(r7, 1)
+	CALL(r12, CHECK_EMPTY)	
+	SET(r2, 0)  // 0 = False
+	CMP(r1, r2)
+	BZ(OK_1)
+	CALL(R12, TESTING_ERROR)
+	LABEL(OK_1)
+
+
+	//pop the values off of the stack, if not the expected values than
+	//print an error message
+	INC(r7, 1)
+	CALL(r12, POP)	
+	SET(r2, 4)
+	CMP(r1, r2)
+	BZ(OK_2)
+	CALL(R12, TESTING_ERROR)
+	LABEL(OK_2)
+
+	INC(r7, 1)
+	CALL(r12, TOP)	// Check top without changing it
+	SET(r2, 5)
+	CMP(r1, r2)
+	BZ(OK_3)
+	CALL(R12, TESTING_ERROR)
+	LABEL(OK_3)
+
+	INC(r7, 1)
+	CALL(r12, POP)	
+	SET(r2, 5)
+	CMP(r1, r2)
+	BZ(OK_4)
+	CALL(R12, TESTING_ERROR)
+	LABEL(OK_4)
+
+	INC(r7, 1)
+	CALL(r12, POP)	
+	SET(r2, 6)
+	CMP(r1, r2)
+	BZ(OK_5)
+	CALL(R12, TESTING_ERROR)
+	LABEL(OK_5)
+
+
+	//Now all values should have been popped from the stack, so check if empty!
+	INC(r7, 1)
+	CALL(r12, CHECK_EMPTY)	
+	SET(r2, 1)  // 1 = True
+	CMP(r1, r2)
+	BZ(OK_6)
+	CALL(R12, TESTING_ERROR)
+	LABEL(OK_6)
+
+	//print success!
+	SET(r1, success_message)
+	CALL(r12, print)
+
+	//be sure to skip over error message!
+	BR(AFTER_TESTING_ERROR)
+
+// The function below prints an error message and the number of the test
+// It stops the program unless the HALT line is commented out
+LABEL(TESTING_ERROR)
+	// We need to save Rt and R12 because they will be overwritten in the calls below
+	//  Let's put them in R10 and R11..
+	MOVE(R10, R12)
+	MOVE(R11, Rt)
+	SET(r1, error_message)
+	CALL(r12, print)
+	MOVE(r1, r7)
+	CALL(r12, printint)
+
+	// Comment out the line below to run all tests and print multiple errors
+	HALT()
+	MOVE(R12, R10)
+	MOVE(Rt,  R11)
+	RETURN(R12, Rt)
+
+
+	LABEL(AFTER_TESTING_ERROR)

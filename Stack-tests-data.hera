@@ -1,0 +1,6 @@
+	DLABEL(start_test_message)
+	TIGER_STRING("\nStarting Stack-HERA tests...")
+	DLABEL(error_message)
+	TIGER_STRING(" Error: Stack tests failed on Test #")
+	DLABEL(success_message)
+	TIGER_STRING(" Testing Success, unless there were error messages printed\n")

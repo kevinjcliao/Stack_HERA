@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?fileVersion 2.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="Simple-HERA.cdt.managedbuild.target.macosx.exe.1865721011" name="Executable (MacOS X)" projectType="cdt.managedbuild.target.macosx.exe">
+<configuration id="cdt.managedbuild.config.gnu.macosx.exe.debug.1146325687" name="Debug" parent="cdt.managedbuild.config.gnu.macosx.exe.debug" artifactName="Simple-HERA" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" cleanCommand="rm -rf">
+<toolChain superClass="cdt.managedbuild.toolchain.gnu.macosx.exe.debug" id="cdt.managedbuild.toolchain.gnu.macosx.exe.debug.1798480479" name="GCC Tool Chain">
+<tool superClass="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.debug" id="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.debug.95242376" name="GCC C Compiler"/>
+<tool superClass="cdt.managedbuild.tool.gnu.cpp.compiler.macosx.exe.debug" id="cdt.managedbuild.tool.gnu.cpp.compiler.macosx.exe.debug.1936702618" name="GCC C++ Compiler">
+<option superClass="gnu.cpp.compiler.option.include.paths" id="gnu.cpp.compiler.option.include.paths.1521412762" valueType="includePath">
+<listOptionValue value="/Network/Servers/moe.cs.haverford.edu/Volumes/Users/courses/include" builtIn="false"/>
+<listOptionValue value="/Network/Servers/moe.cs.haverford.edu/Volumes/Users/courses/lib/HERA-C" builtIn="false"/>
+<listOptionValue value="/Volumes/UFS/Users/davew/courses/include" builtIn="false"/>
+<listOptionValue value="/Volumes/UFS/Users/davew/courses/lib/HERA-C" builtIn="false"/>
+</option>
+<option superClass="gnu.cpp.compiler.option.warnings.allwarn" id="gnu.cpp.compiler.option.warnings.allwarn.813657836" value="false" valueType="boolean"/>
+</tool>
+<tool superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug" id="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug.1327435718" name="MacOS X C Linker"/>
+<tool superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug" id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug.1922976329" name="MacOS X C++ Linker">
+<option superClass="macosx.cpp.link.option.libs" id="macosx.cpp.link.option.libs.882220906" valueType="libs">
+<listOptionValue value="courses" builtIn="false"/>
+</option>
+<option superClass="macosx.cpp.link.option.paths" id="macosx.cpp.link.option.paths.810998663" valueType="stringList">
+<listOptionValue value="/Network/Servers/moe.cs.haverford.edu/Volumes/Users/courses/lib" builtIn="false"/>
+<listOptionValue value="/Volumes/UFS/Users/davew/courses/lib" builtIn="false"/>
+</option>
+</tool>
+<tool superClass="cdt.managedbuild.tool.gnu.assembler.macosx.exe.debug" id="cdt.managedbuild.tool.gnu.assembler.macosx.exe.debug.1631682855" name="GCC Assembler"/>
+</toolChain>
+</configuration>
+<configuration id="cdt.managedbuild.config.macosx.exe.release.1438571019" name="Release" parent="cdt.managedbuild.config.macosx.exe.release" artifactName="Simple-HERA" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" cleanCommand="rm -rf">
+<toolChain superClass="cdt.managedbuild.toolchain.gnu.macosx.exe.release" id="cdt.managedbuild.toolchain.gnu.macosx.exe.release.855550181" name="GCC Tool Chain">
+<tool superClass="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.release" id="cdt.managedbuild.tool.gnu.c.compiler.macosx.exe.release.2044581541" name="GCC C Compiler"/>
+<tool superClass="cdt.managedbuild.tool.gnu.cpp.compiler.macosx.exe.release" id="cdt.managedbuild.tool.gnu.cpp.compiler.macosx.exe.release.572903402" name="GCC C++ Compiler"/>
+<tool superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.release" id="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.release.1583357954" name="MacOS X C Linker"/>
+<tool superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.release" id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.release.823608406" name="MacOS X C++ Linker"/>
+<tool superClass="cdt.managedbuild.tool.gnu.assembler.macosx.exe.release" id="cdt.managedbuild.tool.gnu.assembler.macosx.exe.release.1307033321" name="GCC Assembler"/>
+</toolChain>
+</configuration>
+</project>
+</ManagedProjectBuildInfo>
