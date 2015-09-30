@@ -29,16 +29,16 @@ void HERA_main()
 
 	// REGISTRY USAGE:
 	// R1: String operations
-	// R2: String operations
-	// R3: String operations
+	// R2: Current Character Index
+	// R3: The string character index (string_memory_location + R2)
 	// R4: Integer to be added or popped.
 	// R5: TOP: Latest registry in which memory is stored.
 	// R6 & R7: Operations.
-	// R8: Storing our string copy
+	// R8: String size
 
 
 	DLABEL(the_string)
-	  TIGER_STRING("4")
+	  TIGER_STRING("4 3 4 4 - .")
 
 	// Set the carry block before doing any other operations:
     SETCB()
@@ -47,13 +47,27 @@ void HERA_main()
 	// cout << "I get here! ";
 
 	// Put the main body of your HERA program after the initialization and testing of Stack
+	SET(R3, the_string)
+
+	// Set R8 to the size of the string
 	SET(R1, the_string)
+	CALL(R12, SIZE)
+	MOVE(R8, R1)
+	INC(R8, 1)
+	cout<< "Size of string:";
+	print_reg(R8)
+
+	// Set R2 to the initial increment of 1
+	SET(R2, 1)
+
+
+
 	SET(R5, 0)
 //	print_reg(R4)
 //    CALL(R12, STACK_PUSH)
 //
 //
-//	SET(R4, 120)
+//	SET(R4, 120)	  SET(R2,1)
 //	CALL(R12, STACK_PUSH)
 //	SET(R4, 10)
 //
@@ -156,14 +170,14 @@ void HERA_main()
 	   * MAIN INTERFACE FUNCTION
 	   */
 	  LABEL(OPERATION)
-	  MOVE(R8, R1) // Copy string from R1 to r8
 	  //BASE CASE: If String Length == 0: BREAK
 	  CALL(R12, SIZE)
-	  CMP(R0,R1)
+	  SET(R3, the_string)
+	  ADD(R3, R2, R3)
+	  CMP(R8,R2)
 	  BZ(BREAK)
 	  //ELSE:
-	  MOVE(R1, R8) // move string back to R1
-	  CALL(R12, ORD) // Get first character
+	  LOAD(R1, 0, R3) // Get first character
 	  // Check if it's a space Space (ASCII 32)
 	  SET(R9, 32)
 	  CMP(R1, R9)
@@ -215,13 +229,7 @@ void HERA_main()
 	  BR(SUBSTRING_AND_RECURSE)
 
 	  LABEL(SUBSTRING_AND_RECURSE)
-	  SET(R2,1)
-	  MOVE(R8, R1) // Copy string to R1 again
-	  CALL(R12, SIZE) // Set length to R1
-	  MOVE(R3, R1)
-	  DEC(R3, 1)
-	  MOVE(R1, R8) // Copy string to R1 again
-	  CALL(R12, SUBSTRING)
+	  INC(R2, 1)
 	  BR(OPERATION)
 
 
